@@ -1,7 +1,7 @@
 .td_all {
-    width: 10px; 
-    height: 10px;
-    background-color: rgb(175, 175, 175);
+    /* width: 10px; 
+    height: 10px; */
+    background-color: rgb(219, 219, 219);
     cursor: pointer;
 }
 /* 
@@ -41,5 +41,16 @@ body {
     background-color: white;
     font-size: 20px;
     font-weight:bolder;
+}
+
+
+.change_colour{
+    margin: 5px;
+    width: 20px;
+    height: 20px;
+    background-color: bisque;
+    cursor: pointer;
+    /* display:inline; */
+    float:left;
 }
 /* ========================= */

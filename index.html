@@ -22,9 +22,20 @@
               <td></td>
           </tr> -->
         </table>
-        <div id="coin_n"></div>
-        <div id="coin_n2"></div>
-        重覆點按 => 刪除已繪製部分
+        <br>
+        主色: <input id="color_main" type="color" value="#FF0000" onchange="change_mycolor()">
+        <br>
+        輔色: <input id="color_sup" type="color" value="#0000FF" onchange="change_mycolor()">
+        <br>
+        <button onclick="change_size()">送出</button>
+        <input id="change_size" type="text" placeholder="輸入格子大小 : 預設10px">   
+        <br><br>
+        1. 繪製主色 : 點按
+        <br>
+        2. 繪製輔色 : ctrl + 點按
+        <br>
+        3. 擦除 : 重覆點按
+
     </div>
     <script src="./102.js"></script>
 </body>

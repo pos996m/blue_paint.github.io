@@ -20,8 +20,16 @@ for (let i = 2; i < (xx * yy) + 1; i++) {
     }
 }
 td_all = "<tr>" + td_all
+
+// 建立標籤
 var table_all = document.getElementById("table_all");
 table_all.innerHTML = td_all;
+
+// 建立td_px
+for (let i = 1; i < (xx * yy); i++) {
+    document.getElementById(`td_${i}`).style.width = "10px";
+    document.getElementById(`td_${i}`).style.height = "10px";
+}
 
 var del_C = true;
 
@@ -36,32 +44,41 @@ function ontest(e) {
     //     document.getElementById(e.path[0].id).style.backgroundColor = "";
     // }
 
-    if (x.style.backgroundColor != "red") {
-        console.log(e.path[0].id);
-        x.style.backgroundColor = "red";
-    } else {
+    if (x.style.backgroundColor != "") {
         x.style.backgroundColor = "";
+    } else {
+        x.style.backgroundColor = key_colour;
     }
 
+
+    console.log(e.path[0].id);
     // console.log(e);
     // console.log(e.path[0]);
 }
 
-// function Get_Td_Px() {
-//     x = document.getElementById("Get_Td_Px").value;
-//     console.log(x);
-//     document.getElementsByClassName("td_all").style.width = x;
-//     document.getElementsByClassName("td_all").style.height = x;
-// }
+var key_colour = document.getElementById("color_main").value;
 
-// var key_du = false;
+// 判斷按住ctrl
+function movekeydown(event) {
+    key_colour = document.getElementById("color_sup").value;
+}
 
-// // 判斷按住ctrl
-// function movekeydown(event) {
-//     key_du = event.ctrlKey;
-// }
+// 判斷放開ctrl
+function movekeyup(event) {
+    key_colour = document.getElementById("color_main").value;
+}
 
-// // 判斷放開ctrl
-// function movekeyup(event) {
-//     key_du = event.ctrlKey;
-// }
+// 選擇顏色事件
+function change_mycolor(){
+    key_colour = document.getElementById("color_main").value;
+}
+
+
+// 換格子尺寸
+function change_size(){
+    var x = document.getElementById("change_size").value;
+    for (let i = 1; i < (xx * yy); i++) {
+        document.getElementById(`td_${i}`).style.width = x;
+        document.getElementById(`td_${i}`).style.height = x;
+    }
+}
