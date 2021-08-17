@@ -1,0 +1,45 @@
+.td_all {
+    width: 10px; 
+    height: 10px;
+    background-color: rgb(175, 175, 175);
+    cursor: pointer;
+}
+/* 
+table{
+    border: solid 5px black;
+    padding: 10px;
+    border-radius: 10px;
+} */
+
+html {
+    height: 95%;
+}
+
+body {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#coin_n{
+    position: relative;
+    /* height: 30px; */
+    /* width: 100px; */
+    background-color: white;
+    /* margin: 10px; */
+    font-size: 20px;
+    font-weight:bolder;
+    /* float: right; */
+    /* left: 50%; */
+    /* text-align: center; */
+}
+
+
+#coin_n2{
+    position: relative;
+    background-color: white;
+    font-size: 20px;
+    font-weight:bolder;
+}
+/* ========================= */
