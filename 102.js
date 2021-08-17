@@ -27,31 +27,41 @@ var del_C = true;
 
 
 function ontest(e) {
-    if (!key_du) {
+    var x = document.getElementById(e.path[0].id);
+
+    // if (!key_du) {
+    //     console.log(e.path[0].id);
+    //     document.getElementById(e.path[0].id).style.backgroundColor = "red";
+    // } else {
+    //     document.getElementById(e.path[0].id).style.backgroundColor = "";
+    // }
+
+    if (x.style.backgroundColor != "red") {
         console.log(e.path[0].id);
-        document.getElementById(e.path[0].id).style.backgroundColor = "red";
+        x.style.backgroundColor = "red";
     } else {
-        document.getElementById(e.path[0].id).style.backgroundColor = "";
+        x.style.backgroundColor = "";
     }
+
     // console.log(e);
     // console.log(e.path[0]);
 }
 
-function Get_Td_Px() {
-    x = document.getElementById("Get_Td_Px").value;
-    console.log(x);
-    document.getElementsByClassName("td_all").style.width = x;
-    document.getElementsByClassName("td_all").style.height = x;
-}
+// function Get_Td_Px() {
+//     x = document.getElementById("Get_Td_Px").value;
+//     console.log(x);
+//     document.getElementsByClassName("td_all").style.width = x;
+//     document.getElementsByClassName("td_all").style.height = x;
+// }
 
-var key_du = false;
+// var key_du = false;
 
-// 判斷按住ctrl
-function movekeydown(event) {
-    key_du = event.ctrlKey;
-}
+// // 判斷按住ctrl
+// function movekeydown(event) {
+//     key_du = event.ctrlKey;
+// }
 
-// 判斷放開ctrl
-function movekeyup(event) {
-    key_du = event.ctrlKey;
-}
+// // 判斷放開ctrl
+// function movekeyup(event) {
+//     key_du = event.ctrlKey;
+// }
