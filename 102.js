@@ -44,7 +44,7 @@ function ontest(e) {
     //     document.getElementById(e.path[0].id).style.backgroundColor = "";
     // }
 
-    if (x.style.backgroundColor != "") {
+    if (del_color) {
         x.style.backgroundColor = "";
     } else {
         x.style.backgroundColor = key_colour;
@@ -57,15 +57,23 @@ function ontest(e) {
 }
 
 var key_colour = document.getElementById("color_main").value;
+var del_color = false;
 
 // 判斷按住ctrl
 function movekeydown(event) {
-    key_colour = document.getElementById("color_sup").value;
+    // console.log(event);
+    if(event.key == "Control"){
+        key_colour = document.getElementById("color_sup").value;
+    }
+    if(event.key == "Shift"){
+        del_color = true;
+    }
 }
 
 // 判斷放開ctrl
 function movekeyup(event) {
     key_colour = document.getElementById("color_main").value;
+    del_color = false;
 }
 
 // 選擇顏色事件
@@ -82,3 +90,7 @@ function change_size(){
         document.getElementById(`td_${i}`).style.height = x;
     }
 }
+
+
+// 寬高功能拉出來獨立
+// 建立重畫功能
