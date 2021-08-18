@@ -11,33 +11,87 @@
 
 </head>
 
-<body onkeydown="movekeydown(event)" onkeyup="movekeyup(event)" >
+<body onkeydown="movekeydown(event)" onkeyup="movekeyup(event)">
     <div>
-
-        <table id="table_all" class="" style=" border: solid 5px black;
-        padding: 10px;
-        border-radius: 10px;">
-            <!-- <tr>
+        <div id="min_c">
+            <table id="table_all" class="">
+                <!-- <tr>
               <td></td>
               <td></td>
           </tr> -->
-        </table>
+            </table>
+        </div>
         <br>
-        主色: <input id="color_main" type="color" value="#FF0000" onchange="change_mycolor()">
+        <div class="ctrl_c">
+
+            主色: <input id="color_main" type="color" value="#FF0000" onchange="change_mycolor()">
+            &emsp;&emsp;
+            輔色: <input id="color_sup" type="color" value="#0000FF" onchange="change_mycolor()">
+        </div>
         <br>
-        輔色: <input id="color_sup" type="color" value="#0000FF" onchange="change_mycolor()">
+        <div class="ctrl_c">
+            高度&ensp;<input id="change_H" type="text" maxlength="3" placeholder="預設20格" size="5"
+                onkeypress=" if(event.key == 'Enter'){change_td()}; return change_valueH(event);">
+            格&ensp;
+
+        </div>
+        <div class="ctrl_c">
+            寬度&ensp;<input id="change_W" type="text" maxlength="3" placeholder="預設20格" size="5"
+                onkeypress=" if(event.key == 'Enter'){change_td()}; return change_valueW(event);">
+            格&ensp;
+            <button onclick="change_td()">送出</button>
+        </div>
         <br>
-        <button onclick="change_size()">送出</button>
-        <input id="change_size" type="text" placeholder="輸入格子大小 : 預設10px">   
-        <br><br>
-        1. 繪製主色 : 點按
+        <div class="ctrl_c">
+            大小&ensp;<input id="change_size" type="text" maxlength="4" placeholder="預設10px" size="5"
+                onkeypress=" if(event.key == 'Enter'){change_size()};">
+            px&ensp;
+            <button onclick="change_size()">送出</button>
+        </div>
         <br>
-        2. 繪製輔色 : ctrl + 點按
-        <br>
-        3. 擦除 : shift + 點按
+
+        <div class="ctrl_c">
+            1. 繪製主色 : 點按
+            <br>
+            2. 繪製輔色 : ctrl + 點按
+            <br>
+            3. 擦除 : shift + 點按
+        </div>
+
+
 
     </div>
     <script src="./102.js"></script>
+    <script>
+        var x = document.getElementById("change_H").value;
+        var y = document.getElementById("change_W").value;
+
+        function change_valueH(event) {
+            x = document.getElementById("change_H").value;
+            if (x.length < 3 && change_value(event)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        function change_valueW(event) {
+            y = document.getElementById("change_W").value;
+            if (y.length < 3 && change_value(event)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        function change_value(event) {
+            // console.log(event);
+
+            if (!isNaN(event.key)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    </script>
 </body>
 
 </html>

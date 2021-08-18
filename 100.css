@@ -4,53 +4,51 @@
     background-color: rgb(219, 219, 219);
     cursor: pointer;
 }
-/* 
-table{
-    border: solid 5px black;
-    padding: 10px;
-    border-radius: 10px;
-} */
 
 html {
     height: 95%;
 }
 
+.ctrl_c{
+    margin:0px auto;    
+}
+
 body {
-    height: 100%;
     display: flex;
-    align-items: center;
+    /* float:right; */
+    /* align-items: center; */
     justify-content: center;
+    /* vertical-align: middle; */
 }
 
-#coin_n{
-    position: relative;
-    /* height: 30px; */
-    /* width: 100px; */
-    background-color: white;
-    /* margin: 10px; */
-    font-size: 20px;
-    font-weight:bolder;
-    /* float: right; */
-    /* left: 50%; */
-    /* text-align: center; */
+#table_all {
+    border: solid 5px black;
+    padding: 10px;
+    border-radius: 10px;
 }
 
-
-#coin_n2{
+#coin_n {
     position: relative;
     background-color: white;
     font-size: 20px;
-    font-weight:bolder;
+    font-weight: bolder;
 }
 
+#coin_n2 {
+    position: relative;
+    background-color: white;
+    font-size: 20px;
+    font-weight: bolder;
+}
 
-.change_colour{
+.change_colour {
     margin: 5px;
     width: 20px;
     height: 20px;
     background-color: bisque;
     cursor: pointer;
     /* display:inline; */
-    float:left;
+    float: left;
 }
+
 /* ========================= */
