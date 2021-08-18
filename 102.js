@@ -39,7 +39,7 @@ function change_td(){
 
 // 換格子尺寸
 function change_size() {
-    change_sizepx = document.getElementById("change_size").value;
+    change_sizepx = `${document.getElementById("change_size").value}px`;
     for (let i = 1; i < (xx * yy); i++) {
         document.getElementById(`td_${i}`).style.width = change_sizepx;
         document.getElementById(`td_${i}`).style.height = change_sizepx;
