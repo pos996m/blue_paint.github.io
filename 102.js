@@ -8,10 +8,10 @@ build_td();
 
 function build_td() {
     // 地圖建立過程c
-    var td_all = "<td class='td_all' id='td_1' onclick='ontest(event)' touchstart='ontest(event)';></td>";
+    var td_all = "<td class='td_all' id='td_1' onmouseover='ontest(event)' touchstart='ontest(event)' ondragstart='return false;'></td>";
     // var tr_all;
     for (let i = 2; i < (xx * yy) + 1; i++) {
-        td_all += `<td class='td_all' id='td_${i}' onclick='ontest(event)' touchstart='ontest(event)';></td>`;
+        td_all += `<td class='td_all' id='td_${i}' onmouseover='ontest(event)' touchstart='ontest(event)' ondragstart='return false;'></td>`;
         if (i == (xx * yy)) {
             td_all += "</tr>"
         } else if ((i % yy) == 0) {
@@ -31,7 +31,7 @@ function build_td() {
     }
 }
 
-function change_td(){
+function change_td() {
     xx = document.getElementById("change_H").value;
     yy = document.getElementById("change_W").value;
     build_td();
@@ -48,27 +48,46 @@ function change_size() {
 
 var del_C = true;
 
+// 判定點下的布林
+var chack_down = false;
 
+// 判定點下轉換
+function chack_down_T() {
+    chack_down = true;
+}
+// 判定放開
+function chack_down_F() {
+    chack_down = false;
+}
+
+// 拖曳繪圖事件
 function ontest(e) {
     var x = document.getElementById(e.path[0].id);
 
-    // if (!key_du) {
-    //     console.log(e.path[0].id);
-    //     document.getElementById(e.path[0].id).style.backgroundColor = "red";
-    // } else {
-    //     document.getElementById(e.path[0].id).style.backgroundColor = "";
-    // }
-
-    if (del_color) {
-        x.style.backgroundColor = "";
-    } else {
-        x.style.backgroundColor = key_colour;
+    if (chack_down && e.path[0].id.search("td") != -1) {
+        if (del_color) {
+            x.style.backgroundColor = "";
+        } else {
+            x.style.backgroundColor = key_colour;
+        }
+        console.log(e.path[0].id);
     }
-
-
-    console.log(e.path[0].id);
     // console.log(e);
     // console.log(e.path[0]);
+}
+
+// 點擊繪圖事件
+function ontest2(e) {
+    var x = document.getElementById(e.path[0].id);
+    if (e.path[0].id.search("td") != -1) {
+        if (del_color) {
+            x.style.backgroundColor = "";
+        } else {
+            x.style.backgroundColor = key_colour;
+        }
+        console.log(e.path[0].id);
+    }
+
 }
 
 var key_colour = document.getElementById("color_main").value;
