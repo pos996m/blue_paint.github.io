@@ -11,7 +11,8 @@
 
 </head>
 
-<body onkeydown="movekeydown(event)" onkeyup="movekeyup(event)" onclick="" onmousedown="chack_down_T();ontest2(event);" onmouseup="chack_down_F()" ondragstart='return false;'>
+<body onkeydown="movekeydown(event)" onkeyup="movekeyup(event)" onclick="//console.log(event)"
+    onmousedown="chack_down_T();ontest2(event);" onmouseup="chack_down_F(event)" ondragstart='return false;'>
     <div>
         <div id="min_c">
             <table id="table_all" class="" ondragstart='return false;'>
@@ -24,7 +25,7 @@
         <br>
         <div class="ctrl_c">
 
-            主色: <input id="color_main" type="color" value="#FF0000" onchange="change_mycolor()">
+            主色: <input id="color_main" type="color" value="#FF0000" onchange="change_mycolor();">
             &emsp;&emsp;
             輔色: <input id="color_sup" type="color" value="#0000FF" onchange="change_mycolor()">
         </div>
@@ -49,7 +50,25 @@
             <button onclick="change_size()">送出</button>
         </div>
         <br>
+        <div class="ctrl_c">
+            <!-- <label for="">清除畫面：</label> -->
+            <button onclick="outputNumber()">輸出</button>
+            <button onclick="clearPicture()">重置</button>
+        </div>
+        <div class="ctrl_c" id="outNB2">
+            <br>
+            記錄檔
+            <button onclick="print_map()">讀取</button>
+            <button onclick="CopyTextToClipboard('outNB')">複製</button><br><br>
+            <textarea value="fsaf" id="outNB" rows="20" cols="40"
+                onkeypress=" if(event.key == 'Enter'){print_map()};"></textarea>
+            <!-- style="resize: none;" 可以不讓人拖曳 textarea -->
+            <!-- <br><br>記錄檔輸出 -->
+            <!-- <p id="outNB"></p> -->
+            <!-- <div id="read_out"></div> -->
+        </div>
 
+        <br>
         <div class="ctrl_c">
             1. 繪製主色 : 點按
             <br>
@@ -57,10 +76,31 @@
             <br>
             3. 擦除 : shift + 點按
             <br>
+            4. 吸色 : alt + 點按
             <br>
-            版本1.2
+            3. 主輔色互換 : x
             <br>
-            ※可以選擇顏色來繪製
+            <br>
+            版本2.3
+            <br>
+            ※新增吸色
+            <br>
+            ※新增主輔色互換
+            <br>
+            ※新增記錄檔輸出與讀取
+            <br>
+            <br>
+            版本2.1
+            <br>
+            ※更新錯誤項目
+            <br>
+            ※新增重置按鈕
+            <br>
+            <br>
+            版本2.0
+            <br>
+            ※可以拖曳畫圖
+            <br>
             <br>
             版本1.3
             <br>
@@ -68,9 +108,16 @@
             <br>
             ※版面更新
             <br>
-            版本2.0
             <br>
-            ※可以拖曳畫圖
+            版本1.2
+            <br>
+            ※可以選擇顏色來繪製
+            <br>
+            　
+
+
+
+
         </div>
 
 
