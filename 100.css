@@ -25,6 +25,8 @@ body {
     border: solid 5px black;
     padding: 10px;
     border-radius: 10px;
+    /* border-collapse:collapse; */
+    
 }
 
 #coin_n {
@@ -70,6 +72,11 @@ body {
         border: solid 1px black;
         padding: 10px;
         width: 280px;
+}
+
+
+td{
+    /* border: solid white 2px; */
 }
 
 @media (min-width: 1000px) {

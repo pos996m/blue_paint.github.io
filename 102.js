@@ -187,13 +187,13 @@ function outputNumber() {
     // 將顯示區域 初始化
     document.getElementById('outNB').value = "";
     // 使用迴圈逐一比對
-    for (let index = 1; index < (xx * yy); index++) {
+    for (let index = 1; index <= (xx * yy); index++) {
         // 如果該 td 顏色 非空 則是有顏色 應當被記錄
         if (document.getElementById(`td_${index}`).style.backgroundColor != "") {
             // 加入陣列中
             let x_color = document.getElementById(`td_${index}`).style.backgroundColor;
             // let temp_color = F_get_color16(x_color);
-            temp_id.push(`td_${index}@${x_color}`);
+            temp_id.push(`${index}@${x_color}`);
             if (temp_color_arr.indexOf(x_color) == -1) {
                 temp_color_arr.push(x_color);
             }
@@ -252,7 +252,7 @@ function print_map() {
     // console.log(arrin[0][0])
 
     // 讀取地圖的值
-    document.getElementById("change_size").value = arrin[2][0].substr(0, 2);
+    document.getElementById("change_size").value = arrin[2][0].substr(0, arrin[2][0].indexOf("p"));
     xx = arrin[0][0];
     yy = arrin[1][0];
 
@@ -263,7 +263,7 @@ function print_map() {
     // 讀取編號與顏色
     for (let p = 3; p < arrin.length; p++) {
         for (let k = 1; k < arrin[p].length; k++) {
-            document.getElementById(arrin[p][k]).style.backgroundColor = arrin[p][0];
+            document.getElementById(`td_${arrin[p][k]}`).style.backgroundColor = arrin[p][0];
         }
     }
 
