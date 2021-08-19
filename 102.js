@@ -172,7 +172,7 @@ function change_mycolor() {
 
 // 清除畫面功能
 function clearPicture() {
-    document.getElementById('outNB').value = "";
+    // document.getElementById('outNB').value = "";
     for (let index = 1; index <= (xx * yy); index++) {
         document.getElementById(`td_${index}`).style.backgroundColor = "";
     }
