@@ -7,10 +7,10 @@ build_td();
 
 function build_td() {
     // 地圖建立過程c
-    var td_all = "<td class='td_all' id='td_1' onmouseover='ontest(event)' touchstart='ontest(event)' ondragstart='return false;'></td>";
+    var td_all = "<td class='td_all' id='td_1' ondragstart='return false;'></td>";
     // var tr_all;
     for (let i = 2; i < (xx * yy) + 1; i++) {
-        td_all += `<td class='td_all' id='td_${i}' onmouseover='ontest(event)' touchstart='ontest(event)' ondragstart='return false;'></td>`;
+        td_all += `<td class='td_all' id='td_${i}' ondragstart='return false;'></td>`;
         if (i == (xx * yy)) {
             td_all += "</tr>"
         } else if ((i % yy) == 0) {
