@@ -10,16 +10,16 @@
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous"> -->
 </head>
 
-<body 
-    onkeydown="movekeydown(event)" onkeyup="movekeyup(event)" 
+<body id="table_test" ondragstart='return false;'
+    onkeydown="movekeydown(event);console.log(event.ctrlKey)" onkeyup="movekeyup(event)" onkeypress="//console.log(event)"
     onclick="//console.log(event)"
-    onmousedown="chack_down_T();ontest2(event);" onmouseup="chack_down_F(event)" onmouseover='ontest(event)'
+    onmousedown="chack_down_T();ontest2(event);" onmouseup="chack_down_F(event);outputNumber(event);console.log(event.path[0].id)" onmouseover='ontest(event)'
     ontouchstart="chack_down_T();ontest2(event);console.log('摸下')" ontouchend="chack_down_F(event);console.log('抬起')" ontouchmove="//console.log(event);//ontest(event)" ontouchover="console.log(event)"
     ondragstart='return false;'>
     <!-- align="center" 對齊屬性 -->
     <div>
         <div id="min_c">
-            <table id="table_all" class="" ondragstart='return false;'>
+            <table id="table_all" class="" ondragstart='return false;' onkeydown="console.log(event)">
                 <!-- <tr>
               <td></td>
               <td></td>
@@ -56,7 +56,7 @@
         <br>
         <div class="ctrl_c">
             <!-- <label for="">清除畫面：</label> -->
-            <button onclick="outputNumber()">輸出</button>
+            <button onclick="clickNumber()">輸出</button>
             <button onclick="clearPicture()">重置</button>
         </div>
         <div class="ctrl_c" id="outNB2">
@@ -82,7 +82,14 @@
             <br>
             4. 吸色 : alt + 點按
             <br>
-            3. 主輔色互換 : x
+            5. 主輔色互換 : x
+            <br>
+            6. 上一步驟 : ctrl + z
+            <br>
+            <br>
+            版本2.4
+            <br>
+            ※新增 ctrl + z
             <br>
             <br>
             版本2.4
